@@ -41,7 +41,7 @@ body {
     height: 80%;
     background-color: #34495e;
     border-radius: 50%;
-    animation-duration: 1s;
+    animation-duration: 5s;
     animation-name: inner;
     animation-timing-function: cubic-bezier(0.32, 0, 0.25, 1);
     animation-iteration-count: infinite;
@@ -55,7 +55,7 @@ body {
     background-color: white;
     border-radius: 50%;
     z-index: -10;
-    animation-duration: 1s;
+    animation-duration: 5s;
     animation-name: outer;
     animation-timing-function: cubic-bezier(0.32, 0, 0.25, 1);
     animation-iteration-count: infinite; }
@@ -70,17 +70,25 @@ body {
 
 @keyframes inner {
   0% {
-    transform-origin: center center 0px;
-    transform: scale(0); }
-  100% {
     transform-origin: left top 0px;
+    transform: scale(0); }
+  25% {
+    transform-origin: right top 0px; }
+  75% {
+    transform-origin: right bottom 0px; }
+  100% {
+    transform-origin: left bottom 0px;
     transform: scale(1.3); } }
 @keyframes outer {
   0% {
-    transform-origin: center center 0px;
-    transform: scale(0); }
-  100% {
     transform-origin: left top 0px;
+    transform: scale(0); }
+  25% {
+    transform-origin: right top 0px; }
+  75% {
+    transform-origin: right bottom 0px; }
+  100% {
+    transform-origin: left bottom 0px;
     transform: scale(1); } }
 @keyframes test {
   0% {
