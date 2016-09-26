@@ -21,13 +21,11 @@ body {
   background-color: #00ffeb; }
 .metaball-1 {
   -webkit-animation-duration: 5s;
-  -webkit-animation-fill-mode: both;
   -webkit-animation-name: pulse;
   -webkit-animation-iteration-count: infinite; }
 .metaball-2 {
   margin-top: 50px;
   -webkit-animation-duration: 5s;
-  -webkit-animation-fill-mode: both;
   -webkit-animation-name: pulse1;
   -webkit-animation-iteration-count: infinite; }
 
