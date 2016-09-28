@@ -11,16 +11,31 @@ body {
   height: 200px;
   border-radius: 50%;
   animation: inner 1s cubic-bezier(0.3, 0, 0.25, 1); }
+.firework-path {
+  width: 2px;
+  height: 300px;
+  background-color: white;
+  box-shadow: 0 0 10px white;
+  animation: path 2s cubic-bezier(0.3, 0, 0.25, 1); }
 
 @keyframes inner {
   0% {
     transform: scale(0);
-    border: 30px solid white; }
+    border: 45px solid white;
+    box-shadow: 0 0 50px white; }
   75% {
     opacity: 1; }
   100% {
     opacity: 0;
     transform: scale(1);
-    border: 0px solid white; } }
+    border: 0px solid white;
+    box-shadow: 0 0 0px white; } }
+@keyframes path {
+  0% {
+    transform: scaleY(0);
+    transform-origin: center bottom; }
+  100% {
+    transform: scaleY(1);
+    transform-origin: center bottom; } }
 
 /*# sourceMappingURL=style.css.map */
