@@ -1,51 +1,26 @@
 body {
   background-color: black; }
 
-.metaball-wrapper {
+.firework-wrapper {
   position: fixed;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%); }
+.firework-inner {
   width: 200px;
-  height: 400px;
-  text-align: center;
-  -webkit-transform: translate(-50%, -50%);
-  -webkit-filter: contrast(50);
-  background-color: black;
-  overflow: hidden; }
-.metaball-default {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  -webkit-filter: blur(12px);
+  height: 200px;
   border-radius: 50%;
-  background-color: #00ffeb; }
-.metaball-1 {
-  -webkit-animation-duration: 5s;
-  -webkit-animation-name: pulse;
-  -webkit-animation-iteration-count: infinite; }
-.metaball-2 {
-  margin-top: 50px;
-  -webkit-animation-duration: 5s;
-  -webkit-animation-name: pulse1;
-  -webkit-animation-iteration-count: infinite; }
+  animation: inner 1s cubic-bezier(0.3, 0, 0.25, 1); }
 
-@-webkit-keyframes pulse {
+@keyframes inner {
   0% {
-    -webkit-transform: translateY(0px); }
-  50% {
-    -webkit-transform: translateY(300px); }
-  100% {
-    -webkit-transform: translateY(0px); } }
-@-webkit-keyframes pulse1 {
-  0% {
-    background-color: gold; }
-  25% {
-    background-color: red; }
-  50% {
-    background-color: white; }
+    transform: scale(0);
+    border: 30px solid white; }
   75% {
-    background-color: yellow; }
+    opacity: 1; }
   100% {
-    background-color: blue; } }
+    opacity: 0;
+    transform: scale(1);
+    border: 0px solid white; } }
 
 /*# sourceMappingURL=style.css.map */
