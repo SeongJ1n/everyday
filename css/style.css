@@ -41,7 +41,7 @@ body {
   font-size: 40px;
   color: #fcc2d7;
   animation-name: move-reverse;
-  animation-delay: 0.1s;
+  animation-delay: 0.5s;
   animation-duration: 2s;
   animation-fill-mode: both;
   animation-iteration-count: infinite; }
