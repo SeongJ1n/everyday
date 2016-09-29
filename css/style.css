@@ -1,41 +1,112 @@
 body {
-  background-color: black; }
+  background-color: #f8f9fa;
+  font-family: 'Sandoll Kukdetopokki'; }
 
-.firework-wrapper {
+.heart-wrapper {
   position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%); }
-.firework-inner {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  animation: inner 1s cubic-bezier(0.3, 0, 0.25, 1); }
-.firework-path {
-  width: 2px;
-  height: 300px;
-  background-color: white;
-  box-shadow: 0 0 10px white;
-  animation: path 2s cubic-bezier(0.3, 0, 0.25, 1); }
+.heart-1 {
+  position: relative;
+  font-size: 40px;
+  color: #f783ac;
+  animation-name: pumping;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite; }
+.heart-1-outer {
+  position: relative;
+  margin-top: -40px;
+  z-index: -10;
+  font-size: 40px;
+  color: #fff0f6;
+  animation-name: pumping-outer;
+  animation-delay: 0.05s;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite; }
+.heart-2 {
+  position: relative;
+  z-index: -20;
+  font-size: 40px;
+  color: #fcc2d7;
+  animation-name: move;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite; }
+.heart-3 {
+  position: relative;
+  z-index: -20;
+  font-size: 40px;
+  color: #fcc2d7;
+  animation-name: move-reverse;
+  animation-delay: 0.1s;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite; }
 
-@keyframes inner {
-  0% {
+@keyframes move {
+  from {
+    top: -20px;
+    left: 0px;
     transform: scale(0);
-    border: 45px solid white;
-    box-shadow: 0 0 50px white; }
-  75% {
-    opacity: 1; }
-  100% {
-    opacity: 0;
+    opacity: 0; }
+  25% {
     transform: scale(1);
-    border: 0px solid white;
-    box-shadow: 0 0 0px white; } }
-@keyframes path {
-  0% {
-    transform: scaleY(0);
-    transform-origin: center bottom; }
-  100% {
-    transform: scaleY(1);
-    transform-origin: center bottom; } }
+    opacity: 1; }
+  45% {
+    top: -185px;
+    transform: scale(1.2); }
+  95% {
+    top: -180px;
+    left: 150px;
+    opacity: 0; }
+  to {
+    transform: scale(1.6);
+    opacity: 0; } }
+@keyframes move-reverse {
+  from {
+    top: -80px;
+    left: 0px;
+    transform: scale(0);
+    opacity: 0; }
+  25% {
+    transform: scale(1);
+    opacity: 1; }
+  45% {
+    top: -185px;
+    transform: scale(1.2); }
+  95% {
+    top: -180px;
+    left: -150px;
+    opacity: 0; }
+  to {
+    transform: scale(1.6);
+    opacity: 0; } }
+@keyframes pumping {
+  from, 15%, 53%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: scale(0.7); }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0, 0.77, 0.35, 1);
+    transform: scale(1); }
+  70% {
+    animation-timing-function: cubic-bezier(0, 0.77, 0.35, 1);
+    transform: scale(1.2); }
+  90% {
+    transform: scale(1); } }
+@keyframes pumping-outer {
+  from, 15%, 53%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: scale(0.7); }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: scale(1); }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: scale(1.2); }
+  90% {
+    transform: scale(1); } }
 
 /*# sourceMappingURL=style.css.map */
