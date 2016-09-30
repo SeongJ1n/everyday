@@ -4,22 +4,25 @@ body {
 
 .heart-wrapper {
   position: fixed;
-  top: 50%;
+  top: 45%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%); }
-.heart-1 {
-  position: relative;
+.heart-default {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -20;
   font-size: 40px;
+  color: #fcc2d7; }
+.heart-1 {
+  z-index: 0;
   color: #f783ac;
   animation-name: pumping;
   animation-duration: 3s;
   animation-fill-mode: both;
   animation-iteration-count: infinite; }
 .heart-1-outer {
-  position: relative;
-  margin-top: -40px;
   z-index: -10;
-  font-size: 40px;
   color: #fff0f6;
   animation-name: pumping-outer;
   animation-delay: 0.05s;
@@ -27,63 +30,75 @@ body {
   animation-fill-mode: both;
   animation-iteration-count: infinite; }
 .heart-2 {
-  position: relative;
-  z-index: -20;
-  font-size: 40px;
-  color: #fcc2d7;
-  animation-name: move;
+  animation-name: move, transform;
   animation-duration: 2s;
   animation-fill-mode: both;
   animation-iteration-count: infinite; }
 .heart-3 {
-  position: relative;
-  z-index: -20;
-  font-size: 40px;
-  color: #fcc2d7;
-  animation-name: move-reverse;
+  animation-name: move-reverse, transform-reverse;
   animation-delay: 0.5s;
   animation-duration: 2s;
   animation-fill-mode: both;
   animation-iteration-count: infinite; }
+.heart-4 {
+  animation-name: move;
+  animation-delay: 0.2s;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite; }
+.heart-5 {
+  animation-name: move-reverse;
+  animation-delay: 0.8s;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite; }
 
+@keyframes transform {
+  from {
+    transform: scale(0) rotate(0);
+    opacity: 0; }
+  25% {
+    transform: scale(1) rotate(10deg);
+    opacity: 1; }
+  45% {
+    transform: scale(1.2) rotate(20deg); }
+  95% {
+    opacity: 0; }
+  to {
+    transform: scale(1.6) rotate(30deg);
+    opacity: 0; } }
+@keyframes transform-reverse {
+  from {
+    transform: scale(0) rotate(0);
+    opacity: 0; }
+  25% {
+    transform: scale(0.8) rotate(-10deg);
+    opacity: 1; }
+  45% {
+    transform: scale(1) rotate(-20deg); }
+  95% {
+    opacity: 0; }
+  to {
+    transform: scale(1.3) rotate(-30deg);
+    opacity: 0; } }
 @keyframes move {
   from {
-    top: -20px;
-    left: 0px;
-    transform: scale(0);
-    opacity: 0; }
-  25% {
-    transform: scale(1);
-    opacity: 1; }
+    top: 0px;
+    left: 0px; }
   45% {
-    top: -185px;
-    transform: scale(1.2); }
+    top: -130px; }
   95% {
-    top: -180px;
-    left: 150px;
-    opacity: 0; }
-  to {
-    transform: scale(1.6);
-    opacity: 0; } }
+    top: -120px;
+    left: 170px; } }
 @keyframes move-reverse {
   from {
-    top: -80px;
-    left: 0px;
-    transform: scale(0);
-    opacity: 0; }
-  25% {
-    transform: scale(1);
-    opacity: 1; }
+    top: 0px;
+    left: 0px; }
   45% {
-    top: -185px;
-    transform: scale(1.2); }
+    top: -110px; }
   95% {
-    top: -180px;
-    left: -150px;
-    opacity: 0; }
-  to {
-    transform: scale(1.6);
-    opacity: 0; } }
+    top: -100px;
+    left: -120px; } }
 @keyframes pumping {
   from, 15%, 53%, 80%, to {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
