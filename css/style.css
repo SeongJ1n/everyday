@@ -65,7 +65,8 @@ body {
   95% {
     opacity: 0; }
   to {
-    transform: scale(1.6) rotate(30deg);
+    animation-timing-function: cubic-bezier(0, 0.4, 0, 0.4);
+    transform: scale(1.4) rotate(30deg);
     opacity: 0; } }
 @keyframes transform-reverse {
   from {
