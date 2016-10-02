@@ -11,6 +11,13 @@ body {
   border: 1px solid #dee2e6;
   border-radius: 25px;
   box-shadow: 0px 5px 25px 7px #e9ecef; }
+.star-shape {
+  transform: scale(0);
+  animation-name: shape;
+  animation-delay: 0.2s;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.5, 0, 0, 0.8); }
 .star-circle {
   position: absolute;
   top: 25px;
@@ -18,7 +25,7 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 50px solid #fcc419;
+  border: 50px solid #fab005;
   box-sizing: border-box;
   animation-name: circle;
   animation-duration: 0.8s;
@@ -27,43 +34,52 @@ body {
 .star-line-container {
   position: absolute;
   top: 27px;
-  left: 75px; }
+  left: 75px;
+  z-index: 10; }
 .star-line-wrapper:nth-child(1) {
-  transform: rotate(0); }
+  position: absolute;
+  top: 8px;
+  left: 28px;
+  transform: rotate(36deg); }
 .star-line-wrapper:nth-child(2) {
   position: absolute;
-  top: 33px;
-  left: 47px;
-  transform: rotate(72deg); }
+  top: 64px;
+  left: 48px;
+  transform: rotate(108deg); }
 .star-line-wrapper:nth-child(3) {
   position: absolute;
-  top: 89px;
-  left: 31px;
-  transform: rotate(144deg); }
+  top: 98px;
+  left: 1px;
+  transform: rotate(180deg); }
 .star-line-wrapper:nth-child(4) {
   position: absolute;
-  top: 90px;
-  left: -27px;
-  transform: rotate(216deg); }
+  top: 66px;
+  left: -47px;
+  transform: rotate(252deg); }
 .star-line-wrapper:nth-child(5) {
   position: absolute;
-  top: 35px;
-  left: -46px;
-  transform: rotate(288deg); }
+  top: 10px;
+  left: -30px;
+  transform: rotate(324deg); }
 .star-line {
   position: absolute;
-  top: 10px;
+  top: 5px;
   left: 0;
   width: 2px;
-  height: 40px;
+  height: 45px;
   border-radius: 50%;
   background-color: #f08c00;
   transform-origin: center bottom;
   animation-name: line;
-  animation-duration: 1s;
+  animation-duration: 1.2s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0.5, 0, 0, 0.8); }
 
+@keyframes shape {
+  from {
+    transform: scale(0); }
+  to {
+    transform: scale(1); } }
 @keyframes circle {
   from {
     transform: scale(0);
