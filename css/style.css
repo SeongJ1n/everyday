@@ -12,11 +12,14 @@ body {
   border-radius: 25px;
   box-shadow: 0px 5px 25px 7px #e9ecef; }
 .star-shape {
+  position: relative;
+  z-index: 20;
   transform: scale(0);
   animation-name: shape;
-  animation-delay: 0.2s;
-  animation-duration: 1.2s;
-  animation-iteration-count: infinite;
+  animation-delay: 0.1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.5, 0, 0, 0.8); }
 .star-circle {
   position: absolute;
@@ -28,8 +31,9 @@ body {
   border: 50px solid #fab005;
   box-sizing: border-box;
   animation-name: circle;
-  animation-duration: 0.8s;
-  animation-iteration-count: infinite;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.5, 0, 0, 0.8); }
 .star-line-container {
   position: absolute;
@@ -70,16 +74,28 @@ body {
   border-radius: 50%;
   background-color: #f08c00;
   transform-origin: center bottom;
+  transform: scaleY(0);
   animation-name: line;
-  animation-duration: 1.2s;
-  animation-iteration-count: infinite;
+  animation-delay: 0.05s;
+  animation-duration: 0.65s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.5, 0, 0, 0.8); }
 
 @keyframes shape {
-  from {
+  from, 15% {
     transform: scale(0); }
+  40% {
+    transform: scale(0.95); }
+  60% {
+    animation-timing-function: cubic-bezier(0.8, 0, 0.33, 0.4);
+    transform: scale(0.75); }
+  75% {
+    animation-timing-function: cubic-bezier(0.8, 0, 0.33, 0.4);
+    transform: scale(0.88); }
   to {
-    transform: scale(1); } }
+    animation-timing-function: cubic-bezier(0.25, 0, 0.3, 1);
+    transform: scale(0.85); } }
 @keyframes circle {
   from {
     transform: scale(0);
@@ -88,7 +104,7 @@ body {
   85% {
     opacity: 1; }
   to {
-    transform: scale(1);
+    transform: scale(0.9);
     border: 0px solid #fcc419;
     opacity: 0; } }
 @keyframes line {
@@ -96,10 +112,12 @@ body {
     transform-origin: center bottom;
     transform: scaleY(0); }
   50% {
+    animation-timing-function: cubic-bezier(0, 0.65, 0, 0.55);
     transform: scaleY(0.3); }
   90% {
     opacity: 1; }
   to {
+    animation-timing-function: cubic-bezier(0, 0.65, 0, 0.55);
     transform-origin: center top;
     transform: scaleY(0);
     opacity: 0; } }
