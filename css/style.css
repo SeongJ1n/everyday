@@ -1,6 +1,9 @@
 body {
   background-color: #f8f9fa; }
 
+svg {
+  fill: currentColor; }
+
 .star-wrapper {
   position: absolute;
   top: 50%;
@@ -14,10 +17,15 @@ body {
 .star-shape {
   position: relative;
   z-index: 20;
-  transform: scale(0);
+  color: #f59f00;
+  transform: scale(0.85); }
+.star-shape-gray {
+  color: #ced4da;
+  transform: scale(0.85); }
+.star-shape-animated {
   animation-name: shape;
   animation-delay: 0.1s;
-  animation-duration: 1s;
+  animation-duration: 0.85s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.5, 0, 0, 0.8); }
@@ -28,8 +36,8 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 50px solid #fab005;
-  box-sizing: border-box;
+  box-sizing: border-box; }
+.star-circle-animated {
   animation-name: circle;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
@@ -74,7 +82,8 @@ body {
   border-radius: 50%;
   background-color: #f08c00;
   transform-origin: center bottom;
-  transform: scaleY(0);
+  transform: scaleY(0); }
+.star-line-animated {
   animation-name: line;
   animation-delay: 0.05s;
   animation-duration: 0.65s;
@@ -87,14 +96,11 @@ body {
     transform: scale(0); }
   40% {
     transform: scale(0.95); }
-  60% {
-    animation-timing-function: cubic-bezier(0.8, 0, 0.33, 0.4);
+  70% {
+    animation-timing-function: cubic-bezier(0.215, 0.6, 0.355, 1);
     transform: scale(0.75); }
-  75% {
-    animation-timing-function: cubic-bezier(0.8, 0, 0.33, 0.4);
-    transform: scale(0.88); }
   to {
-    animation-timing-function: cubic-bezier(0.25, 0, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.05);
     transform: scale(0.85); } }
 @keyframes circle {
   from {
