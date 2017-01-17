@@ -13,6 +13,7 @@ body {
   position: absolute;
   background-color: #d9b38e;
   animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.3, 0, 0.5, 1);
   box-shadow: 0px 0px 1px 0px #d9b38e; }
   .outline:after {
     position: absolute;
@@ -22,7 +23,8 @@ body {
     box-shadow: 0px 0px 1px 0px white;
     animation-duration: 1s;
     animation-delay: 0.7s;
-    animation-fill-mode: both; }
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1); }
   .outline-wrapper {
     position: absolute;
     width: 100%;
@@ -46,7 +48,7 @@ body {
       height: 100%; }
   .outline-top {
     top: 0%;
-    left: 5%;
+    left: calc((100% - 90%)/2);
     transform-origin: right center; }
     .outline-top:after {
       top: 7px;
@@ -54,14 +56,14 @@ body {
       transform-origin: left center; }
   .outline-bottom {
     top: calc(100% - 3px);
-    left: 5%;
+    left: calc((100% - 90%)/2);
     transform-origin: left center; }
     .outline-bottom:after {
       bottom: 7px;
       animation-name: inline-bottom;
       transform-origin: right center; }
   .outline-left {
-    top: 5%;
+    top: calc((100% - 90%)/2);
     left: 0%;
     transform-origin: bottom center; }
     .outline-left:after {
@@ -69,7 +71,7 @@ body {
       animation-name: inline-left;
       transform-origin: top center; }
   .outline-right {
-    top: 5%;
+    top: calc((100% - 90%)/2);
     left: calc(100% - 3px);
     transform-origin: top center; }
     .outline-right:after {
@@ -87,22 +89,22 @@ body {
     transform: scale(0.95); } }
 @keyframes inline-top {
   from {
-    transform: translateX(-3%) scaleX(0); }
+    transform: translateX(-3.5%) scaleX(0); }
   to {
     transform: translateX(0%) scaleX(1); } }
 @keyframes inline-bottom {
   from {
-    transform: translateX(3%) scaleX(0); }
+    transform: translateX(3.5%) scaleX(0); }
   to {
     transform: translateX(0%) scaleX(1); } }
 @keyframes inline-left {
   from {
-    transform: translateY(-3%) scaleY(0); }
+    transform: translateY(-3.5%) scaleY(0); }
   to {
     transform: translateY(0%) scaleY(1); } }
 @keyframes inline-right {
   from {
-    transform: translateY(3%) scaleY(0); }
+    transform: translateY(3.5%) scaleY(0); }
   to {
     transform: translateY(0%) scaleY(1); } }
 @keyframes outline-x {
