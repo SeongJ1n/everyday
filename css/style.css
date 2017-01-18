@@ -9,6 +9,46 @@ body {
   width: 450px;
   height: 450px; }
 
+.img-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #110a0c;
+  transform: scale(0.9) rotate(45deg);
+  z-index: 1; }
+
+.text-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation-name: text-wrapper;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.5, 0, 0.3, 0.9);
+  animation-fill-mode: forwards;
+  z-index: 2; }
+  .text-wrapper .title {
+    position: absolute;
+    top: 48.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "baskerville";
+    font-size: 110px;
+    color: #d9b38e; }
+  .text-wrapper .subtitle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "futura";
+    font-size: 28px;
+    font-weight: bold;
+    color: white; }
+    .text-wrapper .subtitle-top {
+      top: 44px; }
+    .text-wrapper .subtitle-bottom {
+      bottom: 44px; }
+
 .outline {
   position: absolute;
   background-color: #d9b38e;
@@ -31,9 +71,10 @@ body {
     height: 100%;
     animation-name: outline-wrapper;
     animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.3, 1);
     animation-fill-mode: forwards; }
   .outline-x {
-    width: 90%;
+    width: 88%;
     height: 3px;
     animation-name: outline-x; }
     .outline-x:after {
@@ -41,14 +82,14 @@ body {
       height: 1px; }
   .outline-y {
     width: 3px;
-    height: 90%;
+    height: 88%;
     animation-name: outline-y; }
     .outline-y:after {
       width: 1px;
       height: 100%; }
   .outline-top {
     top: 0%;
-    left: calc((100% - 90%)/2);
+    left: calc((100% - 88%)/2);
     transform-origin: right center; }
     .outline-top:after {
       top: 7px;
@@ -56,14 +97,14 @@ body {
       transform-origin: left center; }
   .outline-bottom {
     top: calc(100% - 3px);
-    left: calc((100% - 90%)/2);
+    left: calc((100% - 88%)/2);
     transform-origin: left center; }
     .outline-bottom:after {
       bottom: 7px;
       animation-name: inline-bottom;
       transform-origin: right center; }
   .outline-left {
-    top: calc((100% - 90%)/2);
+    top: calc((100% - 88%)/2);
     left: 0%;
     transform-origin: bottom center; }
     .outline-left:after {
@@ -71,7 +112,7 @@ body {
       animation-name: inline-left;
       transform-origin: top center; }
   .outline-right {
-    top: calc((100% - 90%)/2);
+    top: calc((100% - 88%)/2);
     left: calc(100% - 3px);
     transform-origin: top center; }
     .outline-right:after {
@@ -79,14 +120,24 @@ body {
       animation-name: inline-right;
       transform-origin: bottom center; }
 
+@keyframes text-wrapper {
+  from {
+    transform: scale(0) rotate(135deg); }
+  64% {
+    transform: scale(1.01) rotate(0); }
+  73% {
+    transform: scale(1.01);
+    animation-timing-function: cubic-bezier(0, 0.3, 0.4, 0.7); }
+  to {
+    transform: scale(0.92); } }
 @keyframes outline-wrapper {
   from {
-    transform: rotate(135deg); }
+    transform: scale(0.1) rotate(135deg); }
   66% {
-    transform: rotate(0);
+    transform: scale(1) rotate(0);
     animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1); }
   to {
-    transform: scale(0.95); } }
+    transform: scale(0.94); } }
 @keyframes inline-top {
   from {
     transform: translateX(-3.5%) scaleX(0); }
