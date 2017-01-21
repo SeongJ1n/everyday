@@ -131,7 +131,7 @@ body {
 
 @keyframes img-mask {
   from {
-    transform: translate(-50%, -65%);
+    transform: translate(-50%, -62%);
     -webkit-clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
     clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); }
   to {
