@@ -11,13 +11,23 @@ body {
 
 .img-wrapper {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
-  background-color: #110a0c;
-  transform: scale(0.9) rotate(45deg);
+  width: 100%;
+  height: 100%;
+  animation-name: img-wrapper;
+  animation-delay: 0.3s;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+  overflow: hidden;
   z-index: 1; }
+.img-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 640px;
+  height: 640px;
+  transform: translate(-50%, -50%) rotate(-45deg); }
 
 .text-wrapper {
   position: absolute;
@@ -30,11 +40,11 @@ body {
   z-index: 2; }
   .text-wrapper .title {
     position: absolute;
-    top: 48.5%;
+    top: 49%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "baskerville";
-    font-size: 110px;
+    font-size: 120px;
     color: #d9b38e; }
   .text-wrapper .subtitle {
     position: absolute;
@@ -45,9 +55,9 @@ body {
     font-weight: bold;
     color: white; }
     .text-wrapper .subtitle-top {
-      top: 44px; }
+      top: 7%; }
     .text-wrapper .subtitle-bottom {
-      bottom: 44px; }
+      bottom: 7%; }
 
 .outline {
   position: absolute;
@@ -120,6 +130,16 @@ body {
       animation-name: inline-right;
       transform-origin: bottom center; }
 
+@keyframes img-content {
+  from {
+    transform: translateX(-50%); }
+  to {
+    transform: translateX(0); } }
+@keyframes img-wrapper {
+  from {
+    transform: scale(0) rotate(45deg); }
+  to {
+    transform: scale(0.9) rotate(45deg); } }
 @keyframes text-wrapper {
   from {
     transform: scale(0) rotate(135deg); }
