@@ -9,26 +9,19 @@ body {
   width: 450px;
   height: 450px; }
 
-.img-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  animation-name: img-wrapper;
-  animation-delay: 0.3s;
-  animation-duration: 0.8s;
-  animation-fill-mode: both;
-  animation-timing-function: cubic-bezier(0.5, 0, 0.3, 0.9);
-  overflow: hidden;
-  z-index: 1; }
-.img-content {
+.img {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 640px;
-  height: 640px;
-  transform: translate(-50%, -50%) rotate(-45deg); }
+  width: 120%;
+  height: 120%;
+  animation-name: img-mask;
+  animation-delay: 0.3s;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  z-index: 1; }
 
 .text-wrapper {
   position: absolute;
@@ -41,11 +34,12 @@ body {
   z-index: 2; }
   .text-wrapper .title {
     position: absolute;
-    top: 49%;
+    top: 48.5%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "baskerville";
-    font-size: 120px;
+    font-size: 110px;
+    letter-spacing: 0.04em;
     color: #d9b38e; }
   .text-wrapper .subtitle {
     width: 80%;
@@ -54,19 +48,19 @@ body {
     left: 50%;
     transform: translateX(-50%);
     font-family: "futura";
-    font-size: 28px;
+    font-size: 27px;
     font-weight: bold;
-    color: white; }
+    letter-spacing: 0.02em;
+    color: #e0dddf; }
     .text-wrapper .subtitle-top {
-      top: 7%; }
+      top: 7.5%; }
     .text-wrapper .subtitle-bottom {
-      bottom: 7%; }
+      bottom: 7.5%; }
 
 .outline {
   position: absolute;
   background-color: #d9b38e;
   animation-duration: 1s;
-  animation-timing-function: cubic-bezier(0.3, 0, 0.5, 1);
   box-shadow: 0px 0px 1px 0px #d9b38e; }
   .outline:after {
     position: absolute;
@@ -75,7 +69,7 @@ body {
     background-color: white;
     box-shadow: 0px 0px 1px 0px white;
     animation-duration: 1s;
-    animation-delay: 0.7s;
+    animation-delay: 0.9s;
     animation-fill-mode: both;
     animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1); }
   .outline-wrapper {
@@ -89,14 +83,16 @@ body {
   .outline-x {
     width: 88%;
     height: 3px;
-    animation-name: outline-x; }
+    animation-name: outline-x;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.6, 0.6); }
     .outline-x:after {
       width: 100%;
       height: 1px; }
   .outline-y {
     width: 3px;
     height: 88%;
-    animation-name: outline-y; }
+    animation-name: outline-y;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.6, 0.6); }
     .outline-y:after {
       width: 1px;
       height: 100%; }
@@ -133,16 +129,15 @@ body {
       animation-name: inline-right;
       transform-origin: bottom center; }
 
-@keyframes img-content {
+@keyframes img-mask {
   from {
-    transform: translateX(-50%); }
+    transform: translate(-50%, -65%);
+    -webkit-clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); }
   to {
-    transform: translateX(0); } }
-@keyframes img-wrapper {
-  from {
-    transform: scale(0) rotate(45deg); }
-  to {
-    transform: scale(0.9) rotate(45deg); } }
+    transform: translate(-50%, -50%);
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); } }
 @keyframes text-wrapper {
   from {
     transform: scale(0) rotate(135deg); }
@@ -160,7 +155,7 @@ body {
     transform: scale(1) rotate(0);
     animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1); }
   to {
-    transform: scale(0.94); } }
+    transform: scale(0.91); } }
 @keyframes inline-top {
   from {
     transform: translateX(-3.5%) scaleX(0); }
